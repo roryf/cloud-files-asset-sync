@@ -9,7 +9,7 @@ module CloudfileAsset
     end
 
     def container
-      @container ||=  CloudFiles::Connection.new(:username => config[:username], :api_key => config[:api_key], :snet => config[:service_net]).container(config[:assets_container])
+      @container ||=  CloudFiles::Connection.new(:username => config[:username], :api_key => config[:api_key], :snet => config[:service_net], :auth_url => config[:auth_url]).container(config[:assets_container])
     end
 
     # TODO: Is this the same as Action Pack -> ActionView::Helpers::AssetTagHelper.asset_file_path and collect_asset_files
